@@ -1,1 +1,1 @@
-worker: sh target/bin/TelegramAntiToporBot
+worker: java TelegramAntiToporBot.jar
