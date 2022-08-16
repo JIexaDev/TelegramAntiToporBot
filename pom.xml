@@ -9,6 +9,7 @@
     <version>1.0-RELEASE</version>
 
     <properties>
+        <java.version>16</java.version>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
         <telegram.version>5.7.1</telegram.version>
