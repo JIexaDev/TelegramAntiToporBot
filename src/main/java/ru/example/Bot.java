@@ -27,7 +27,7 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (fromTopor(update) || containsTopor(update)) {
+        if (fromTopor(update) || containsTopor(update) || captionTopor(update)) {
             Message messageFrom = update.getMessage();
             messageId = messageFrom.getMessageId();
             chatId = messageFrom.getChatId();
@@ -61,6 +61,14 @@ public class Bot extends TelegramLongPollingBot {
         if (update.getMessage().hasText()) {
             String text = update.getMessage().getText();
             return text.contains("\uD83D\uDC49 Топор Live") || text.contains("\uD83D\uDC49 Топор +18");
+        }
+        return false;
+    }
+
+    public Boolean captionTopor(Update update) {
+        if (update.getMessage().getCaption() != null) {
+            String text = update.getMessage().getCaption();
+            return text.contains("\uD83D\uDD79КиберТопор");
         }
         return false;
     }
